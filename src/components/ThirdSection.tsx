@@ -300,9 +300,9 @@ const ThirdSection = () => {
 
                     {/* How It Works */}
                     <div className="space-y-2">
-                      <div className="flex items-center gap-1.5 text-indigo-650">
-                        <HelpCircle className="h-4.5 w-4.5 text-indigo-500" />
-                        <span className="text-[10px] font-extrabold uppercase tracking-wider">How it works</span>
+                      <div className="flex items-center gap-1.5">
+                        <HelpCircle className="h-4.5 w-4.5 text-indigo-600 stroke-[2.5]" />
+                        <span className="text-xs font-black uppercase tracking-wider text-indigo-950">How it works</span>
                       </div>
                       <p className="text-sm sm:text-base font-bold leading-relaxed text-slate-700">{activeFeat.howItWorks}</p>
                     </div>
@@ -311,8 +311,8 @@ const ThirdSection = () => {
                   {/* Business Benefit Box */}
                   <div className="bg-gradient-to-br from-indigo-50/50 via-indigo-50/80 to-white border border-indigo-100/50 p-5.5 rounded-2xl mt-5 shadow-sm">
                     <div className="flex items-center gap-2 text-indigo-600 mb-1.5">
-                      <Briefcase className="h-4.5 w-4.5" />
-                      <span className="text-[10px] font-extrabold uppercase tracking-wider">Business Benefit</span>
+                      <Briefcase className="h-4.5 w-4.5 text-indigo-600 stroke-[2.5]" />
+                      <span className="text-xs font-black uppercase tracking-wider text-indigo-955">Business Benefit</span>
                     </div>
                     <p className="text-xs sm:text-sm md:text-base font-bold text-indigo-955 leading-relaxed">{activeFeat.benefit}</p>
                   </div>
