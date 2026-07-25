@@ -90,11 +90,13 @@ const FaqSection = () => {
                   {faq.q}
                 </span>
                 <div
-                  className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/50 border border-white/40 shadow-sm transition-transform duration-300 ${
-                    isOpen ? "rotate-180 bg-slate-950 text-white border-slate-950" : "text-slate-550"
+                  className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
+                    isOpen 
+                      ? "rotate-180 bg-white border-slate-300 shadow-sm" 
+                      : "bg-white/50 border-white/40"
                   }`}
                 >
-                  <ChevronDown className="h-4 w-4" />
+                  <ChevronDown className={`h-4 w-4 transition-colors ${isOpen ? "text-slate-950" : "text-slate-500"}`} />
                 </div>
               </button>
 
