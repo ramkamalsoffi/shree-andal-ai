@@ -141,10 +141,7 @@ const SeventhSection = () => {
           transition={{ duration: 0.6 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-slate-500 shadow-sm">
-            Pricing
-          </span>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl lg:text-[40px] lg:leading-[1.15]">
+          <h2 className="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl lg:text-[40px] lg:leading-[1.15]">
             Choose a plan that feels as{" "}
             <span className="bg-gradient-to-r from-sky-600 to-indigo-600 bg-clip-text text-transparent">
               clear as the interface.
@@ -243,11 +240,6 @@ const SeventhSection = () => {
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           {/* Form Description */}
           <div className="space-y-6">
-            <div>
-              <span className="inline-flex items-center rounded-full border border-slate-100 bg-[#F8FAFC] px-4.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.15em] text-slate-500/90 shadow-sm">
-                Personalized Demo
-              </span>
-            </div>
             <h2 className="text-4xl font-extrabold tracking-tight text-[#0B0F19] md:text-5xl leading-tight">
               See AIBASS in Action
             </h2>

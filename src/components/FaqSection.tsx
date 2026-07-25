@@ -58,11 +58,7 @@ const FaqSection = () => {
         transition={{ duration: 0.6 }}
         className="mx-auto mb-16 max-w-2xl text-center"
       >
-        <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-slate-500 shadow-sm">
-          <HelpCircle className="h-3.5 w-3.5 text-sky-600" />
-          Support
-        </span>
-        <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl lg:text-[40px] lg:leading-[1.15]">
+        <h2 className="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl lg:text-[40px] lg:leading-[1.15]">
           Frequently Asked{" "}
           <span className="bg-gradient-to-r from-sky-600 to-indigo-600 bg-clip-text text-transparent">
             Questions

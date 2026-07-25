@@ -23,10 +23,6 @@ const SixthSection = () => {
           transition={{ duration: 0.6 }}
           className="space-y-6"
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-slate-500 shadow-sm">
-            <Award className="h-3.5 w-3.5 text-indigo-600" />
-            Why Choose Us
-          </span>
           <h2 className="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl lg:text-[40px] lg:leading-[1.15]">
             Why Businesses{" "}
             <span className="bg-gradient-to-r from-sky-600 to-indigo-600 bg-clip-text text-transparent">

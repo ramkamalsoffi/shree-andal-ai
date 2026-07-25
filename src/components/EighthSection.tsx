@@ -25,13 +25,6 @@ const EighthSection = () => {
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-3xl space-y-6">
-        <div className="flex justify-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-slate-250 bg-slate-50 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-slate-500 shadow-sm">
-            <Sparkles className="h-3.5 w-3.5 text-sky-600 animate-pulse" />
-            Get Started Today
-          </span>
-        </div>
-        
         <h2 className="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl md:text-5xl leading-[1.15]">
           Make Business Accounting{" "}
           <span className="bg-gradient-to-r from-sky-600 to-indigo-600 bg-clip-text text-transparent">
