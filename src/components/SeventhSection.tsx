@@ -273,7 +273,7 @@ const SeventhSection = () => {
 
           {/* Booking Form Card */}
           <div className="relative bg-[#E2E8F0] rounded-3xl p-6 sm:p-8 border border-slate-350 shadow-[0_15px_40px_rgba(15,23,42,0.04)] max-w-md mx-auto w-full">
-            <h3 className="text-2xl font-bold text-center text-slate-900 mb-8">Feedback</h3>
+            <h3 className="text-2xl font-bold text-center text-slate-900 mb-8">Book a free demo</h3>
             <AnimatePresence mode="wait">
               {!submitted ? (
                 <motion.form
