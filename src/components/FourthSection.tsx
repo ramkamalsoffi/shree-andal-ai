@@ -89,8 +89,8 @@ const FourthSection = () => {
           </p>
         </motion.div>
 
-        {/* Expanding Accordion Panels */}
-        <div className="flex flex-col lg:flex-row gap-4 h-[500px] sm:h-[440px] lg:h-[380px] w-full items-stretch">
+        {/* ─── DESKTOP EXPANDING ACCORDION VIEW ─── */}
+        <div className="hidden lg:flex lg:flex-row gap-4 lg:h-[380px] w-full items-stretch">
           {flowStages.map((stage, idx) => {
             const isExpanded = hoveredIdx === idx;
             const IconComponent = stage.icon;
@@ -171,6 +171,62 @@ const FourthSection = () => {
                   </div>
                 </div>
               </motion.div>
+            );
+          })}
+        </div>
+
+        {/* ─── MOBILE/TABLET STACKED FULL VIEW ─── */}
+        <div className="flex flex-col lg:hidden gap-5 px-4">
+          {flowStages.map((stage) => {
+            const IconComponent = stage.icon;
+
+            return (
+              <div
+                key={stage.id}
+                className="relative rounded-2xl border border-slate-200 bg-white p-6 shadow-sm overflow-hidden flex flex-col justify-between"
+              >
+                {/* Accent Color Band on top */}
+                <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${stage.colorClass}`} />
+
+                <div className="space-y-4">
+                  {/* Top Header info */}
+                  <div className="flex items-center justify-between">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-100 text-slate-600 shadow-sm">
+                      <IconComponent className="h-5.5 w-5.5" />
+                    </div>
+                    <span className="text-[9px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-full border bg-slate-50 border-slate-100 text-slate-400">
+                      {stage.phase}
+                    </span>
+                  </div>
+
+                  {/* Title & Phase Number */}
+                  <div className="pt-2">
+                    <span className="text-[10px] font-extrabold uppercase tracking-widest block text-slate-400">
+                      Phase {stage.num}
+                    </span>
+                    <h3 className="text-lg font-extrabold tracking-tight mt-1 leading-tight text-slate-900">
+                      {stage.title}
+                    </h3>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-xs font-semibold leading-relaxed text-slate-500 mt-2">
+                    {stage.desc}
+                  </p>
+                </div>
+
+                {/* Footer Checkmark Bullet */}
+                <div className="mt-6 pt-4 border-t border-slate-100">
+                  <div className="flex items-center gap-2">
+                    <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-50 text-emerald-700">
+                      <Check className="h-3 w-3 stroke-[3.5]" />
+                    </div>
+                    <span className="text-[10px] font-bold uppercase tracking-wide text-slate-655">
+                      {stage.bullet}
+                    </span>
+                  </div>
+                </div>
+              </div>
             );
           })}
         </div>

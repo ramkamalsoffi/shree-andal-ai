@@ -55,17 +55,24 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Links Col 2 */}
+          {/* Contact & Address */}
           <div>
             <h4 className="mb-4 text-xs font-extrabold uppercase tracking-wider text-slate-800 border-b-2 border-indigo-500 pb-1.5 w-fit">
-              Support
+              Contact & Address
             </h4>
-            <ul className="space-y-3 text-xs font-bold text-slate-500">
-              <li><a href="#" className="hover:text-slate-900 transition-colors">Help Documentation</a></li>
-              <li><a href="#" className="hover:text-slate-900 transition-colors">GST Guide India</a></li>
-              <li><a href="#" className="hover:text-slate-900 transition-colors">API References</a></li>
-              <li><a href="#" className="hover:text-slate-900 transition-colors">System Status</a></li>
-            </ul>
+            <div className="space-y-3 text-xs font-bold text-slate-500 leading-relaxed">
+              <p className="text-slate-900">
+                Phone: <a href="tel:+919487393318" className="hover:text-indigo-650 transition-colors font-extrabold text-indigo-600">+91 94873 93318</a>
+              </p>
+              <div className="space-y-1 pt-1 text-[11px] font-semibold text-slate-500">
+                <p className="font-bold text-slate-800">Principal Place of Business:</p>
+                <p>2nd Floor, No.119/1,</p>
+                <p>Mariamman Kovil East Street,</p>
+                <p>Near Jodhiram Super Market,</p>
+                <p>Srivilliputhur, Virudhunagar District,</p>
+                <p>Tamil Nadu - 626125</p>
+              </div>
+            </div>
           </div>
 
         </div>

@@ -205,13 +205,6 @@ const Index = () => {
 
             <motion.div initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }} className="flex items-center gap-3">
               <Button
-                variant="ghost"
-                onClick={() => navigate("/auth")}
-                className="hidden h-10 px-4 text-sm font-semibold text-slate-700 hover:bg-slate-100/50 hover:text-slate-900 sm:flex"
-              >
-                Log In
-              </Button>
-              <Button
                 onClick={() => navigate("/auth?tab=signup")}
                 className="hidden lg:flex h-10 items-center rounded-full bg-slate-950 px-5 text-sm font-semibold text-white shadow-md transition-transform hover:-translate-y-0.5 hover:bg-slate-800"
               >
@@ -278,23 +271,13 @@ const Index = () => {
                   
                   <div className="h-px bg-slate-200/50 my-1" />
                   
-                  <div className="flex items-center gap-3">
-                    <Button
-                      variant="ghost"
-                      onClick={() => {
-                        setMobileMenuOpen(false);
-                        navigate("/auth");
-                      }}
-                      className="flex-1 h-10 text-sm font-semibold text-slate-700 hover:bg-slate-100/40"
-                    >
-                      Log In
-                    </Button>
+                  <div className="flex items-center">
                     <Button
                       onClick={() => {
                         setMobileMenuOpen(false);
                         navigate("/auth?tab=signup");
                       }}
-                      className="flex-1 h-10 rounded-full bg-slate-950 text-sm font-semibold text-white shadow hover:bg-slate-800"
+                      className="w-full h-10 rounded-full bg-slate-950 text-sm font-semibold text-white shadow hover:bg-slate-800"
                     >
                       Get Started
                     </Button>
