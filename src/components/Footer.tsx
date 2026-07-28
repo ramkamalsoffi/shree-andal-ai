@@ -13,12 +13,12 @@ const Footer = () => {
           
           {/* Brand Info */}
           <div className="space-y-5">
-            <div className="flex items-center gap-2.5">
+            <a href="/" className="flex items-center gap-2.5 hover:opacity-90">
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-sky-500 to-indigo-600 shadow-sm text-white animate-pulse">
                 <Sparkles className="h-4.5 w-4.5" />
               </div>
               <span className="text-xl font-extrabold tracking-tight text-slate-900">AIBASS</span>
-            </div>
+            </a>
             <p className="max-w-sm text-xs font-bold leading-relaxed text-slate-500">
               Simplify bookkeeping, invoicing, GST, inventory and financial reporting with AIBASS AI accounting software. Use voice or text commands to manage your business operations.
             </p>
@@ -47,11 +47,11 @@ const Footer = () => {
               Product
             </h4>
             <ul className="space-y-3 text-xs font-bold text-slate-500">
-              <li><a href="#features" className="hover:text-slate-900 transition-colors">Features</a></li>
-              <li><a href="#how-it-works" className="hover:text-slate-900 transition-colors">How It Works</a></li>
-              <li><a href="#business" className="hover:text-slate-900 transition-colors">Businesses</a></li>
-              <li><a href="#why-choose" className="hover:text-slate-900 transition-colors">Why Choose AIBASS</a></li>
-              <li><a href="#pricing" className="hover:text-slate-900 transition-colors">Pricing Options</a></li>
+              <li><a href="/#features" className="hover:text-slate-900 transition-colors">Features</a></li>
+              <li><a href="/#how-it-works" className="hover:text-slate-900 transition-colors">How It Works</a></li>
+              <li><a href="/#business" className="hover:text-slate-900 transition-colors">Businesses</a></li>
+              <li><a href="/#why-choose" className="hover:text-slate-900 transition-colors">Why Choose AIBASS</a></li>
+              <li><a href="/#pricing" className="hover:text-slate-900 transition-colors">Pricing Options</a></li>
             </ul>
           </div>
 
