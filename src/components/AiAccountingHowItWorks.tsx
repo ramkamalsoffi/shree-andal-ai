@@ -91,8 +91,8 @@ export const AiAccountingHowItWorks = () => {
 
                   {/* Arrow connector (between steps) */}
                   {index < steps.length - 1 && (
-                    <div className="col-span-1 flex items-center justify-center" style={{ paddingTop: '0px' }}>
-                      <div className="flex items-center gap-0.5 text-slate-300" style={{ marginTop: '-48px' }}>
+                    <div className="col-span-1 flex items-center justify-center">
+                      <div className="flex items-center gap-0.5 text-slate-300" style={{ marginTop: '28px' }}>
                         <div className="w-6 h-px bg-slate-200" />
                         <ChevronRight className="h-6 w-6" />
                       </div>
