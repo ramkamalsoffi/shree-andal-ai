@@ -32,6 +32,7 @@ import SeventhSection from "@/components/SeventhSection";
 import FaqSection from "@/components/FaqSection";
 import EighthSection from "@/components/EighthSection";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 type Stat = {
   icon: JSX.Element;
@@ -193,122 +194,7 @@ const Index = () => {
         </motion.div>
       )}
 
-      <motion.header
-        variants={{
-          visible: { y: 0, opacity: 1 },
-          hidden: { y: -100, opacity: 0 }
-        }}
-        animate={hidden ? "hidden" : "visible"}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="fixed inset-x-0 top-4 z-50 mx-auto max-w-6xl px-4 sm:px-6"
-      >
-        <div className="flex flex-col rounded-2xl border border-white/40 bg-white/65 shadow-[0_8px_30px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-350">
-          {/* Header main row */}
-          <div className="flex items-center justify-between px-4 py-3">
-            <motion.div
-              initial={{ opacity: 0, x: -16 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="flex items-center gap-2.5"
-            >
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-sky-500 to-indigo-600 shadow-sm">
-                <Sparkles className="h-5 w-5 text-white" />
-              </div>
-              <span className="text-xl font-bold tracking-tight text-slate-900">AIBASS</span>
-            </motion.div>
-
-            <nav className="hidden lg:flex items-center gap-6">
-              <a href="#features" className="text-xs font-bold text-slate-655 hover:text-slate-950 transition-colors uppercase tracking-[0.15em]">Features</a>
-              <a href="#how-it-works" className="text-xs font-bold text-slate-655 hover:text-slate-950 transition-colors uppercase tracking-[0.15em] whitespace-nowrap">How It Works</a>
-              <a href="#business" className="text-xs font-bold text-slate-655 hover:text-slate-950 transition-colors uppercase tracking-[0.15em] whitespace-nowrap">Businesses</a>
-              <a href="#why-choose" className="text-xs font-bold text-slate-655 hover:text-slate-950 transition-colors uppercase tracking-[0.15em] whitespace-nowrap">Why Choose AIBASS</a>
-              <a href="#pricing" className="text-xs font-bold text-slate-655 hover:text-slate-950 transition-colors uppercase tracking-[0.15em]">Pricing</a>
-            </nav>
-
-            <motion.div initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }} className="flex items-center gap-3">
-              <Button
-                onClick={() => navigate("/auth?tab=signup")}
-                className="hidden lg:flex h-10 items-center rounded-full bg-slate-950 px-5 text-sm font-semibold text-white shadow-md transition-transform hover:-translate-y-0.5 hover:bg-slate-800"
-              >
-                Get Started
-              </Button>
-
-              {/* Hamburger Button */}
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 rounded-xl text-slate-750 hover:text-slate-950 hover:bg-slate-100/40 focus:outline-none transition-colors"
-                aria-label="Toggle mobile menu"
-              >
-                {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </button>
-            </motion.div>
-          </div>
-
-          {/* Mobile menu dropdown */}
-          <AnimatePresence>
-            {mobileMenuOpen && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.25 }}
-                className="overflow-hidden lg:hidden"
-              >
-                <div className="flex flex-col gap-3.5 px-6 pb-6 pt-2 border-t border-slate-150/40">
-                  <a
-                    href="#features"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="text-xs font-extrabold text-slate-655 hover:text-slate-950 transition-colors uppercase tracking-[0.15em]"
-                  >
-                    Features
-                  </a>
-                  <a
-                    href="#how-it-works"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="text-xs font-extrabold text-slate-655 hover:text-slate-950 transition-colors uppercase tracking-[0.15em]"
-                  >
-                    How It Works
-                  </a>
-                  <a
-                    href="#business"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="text-xs font-extrabold text-slate-655 hover:text-slate-950 transition-colors uppercase tracking-[0.15em]"
-                  >
-                    Businesses
-                  </a>
-                  <a
-                    href="#why-choose"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="text-xs font-extrabold text-slate-655 hover:text-slate-950 transition-colors uppercase tracking-[0.15em]"
-                  >
-                    Why Choose AIBASS
-                  </a>
-                  <a
-                    href="#pricing"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="text-xs font-extrabold text-slate-655 hover:text-slate-950 transition-colors uppercase tracking-[0.15em]"
-                  >
-                    Pricing
-                  </a>
-                  
-                  <div className="h-px bg-slate-200/50 my-1" />
-                  
-                  <div className="flex items-center">
-                    <Button
-                      onClick={() => {
-                        setMobileMenuOpen(false);
-                        navigate("/auth?tab=signup");
-                      }}
-                      className="w-full h-10 rounded-full bg-slate-950 text-sm font-semibold text-white shadow hover:bg-slate-800"
-                    >
-                      Get Started
-                    </Button>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      </motion.header>
+      <Header />
 
       <main className="relative mx-auto max-w-7xl px-5 sm:px-6">
         <HeroSection onWatchDemo={() => setShowDemo(true)} />
