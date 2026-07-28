@@ -88,11 +88,11 @@ export const AiAccountingFaq = () => {
               <summary className="flex items-center justify-between p-5 font-bold text-slate-900 cursor-pointer list-none select-none">
                 <div className="flex items-center gap-3">
                   <HelpCircle className="h-4 w-4 text-indigo-500 shrink-0" />
-                  <span className="text-xs sm:text-sm">{faq.q}</span>
+                  <span className="text-sm sm:text-base">{faq.q}</span>
                 </div>
                 <ChevronDown className="h-4 w-4 text-slate-400 group-open:rotate-185 transition-transform shrink-0" />
               </summary>
-              <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-655 font-semibold leading-relaxed border-t border-slate-50">
+              <div className="px-5 pb-5 pt-1 text-sm sm:text-base text-slate-655 font-semibold leading-relaxed border-t border-slate-50">
                 {faq.a}
               </div>
             </details>

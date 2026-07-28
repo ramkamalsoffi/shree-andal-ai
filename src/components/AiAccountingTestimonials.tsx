@@ -65,7 +65,7 @@ export const AiAccountingTestimonials = () => {
 
         {/* Disclaimer Info note */}
         <div className="max-w-2xl mx-auto bg-slate-50 border border-slate-200/50 rounded-xl p-3 text-center">
-          <p className="text-[10px] text-slate-500 font-semibold leading-relaxed">
+          <p className="text-xs text-slate-500 font-semibold leading-relaxed">
             * Sample testimonials for layout preview only. The names, companies and details below are fictional and must not be published as genuine customer reviews.
           </p>
         </div>
@@ -84,7 +84,7 @@ export const AiAccountingTestimonials = () => {
                   </span>
                   <Quote className="h-5 w-5 text-indigo-200 shrink-0 mt-0.5" />
                 </div>
-                <p className="text-xs font-semibold text-slate-655 leading-relaxed italic">
+                <p className="text-sm font-semibold text-slate-655 leading-relaxed italic">
                   “{item.quote}”
                 </p>
               </div>
@@ -94,9 +94,9 @@ export const AiAccountingTestimonials = () => {
                   {item.name.charAt(0)}
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-900 leading-snug">{item.name}</h4>
-                  <p className="text-[10px] text-slate-450 font-bold">{item.role}</p>
-                  <span className="text-[9px] text-slate-400 font-medium">{item.business}</span>
+                  <h4 className="text-sm font-bold text-slate-900 leading-snug">{item.name}</h4>
+                  <p className="text-xs text-slate-450 font-bold">{item.role}</p>
+                  <span className="text-[10px] text-slate-400 font-medium">{item.business}</span>
                 </div>
               </div>
             </div>

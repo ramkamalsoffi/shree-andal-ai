@@ -55,9 +55,9 @@ export const AiAccountingComparison = () => {
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-slate-50/80 border-b border-slate-200/65">
-                <th className="p-4 md:p-5 text-xs font-bold uppercase tracking-wider text-slate-800">Capability</th>
-                <th className="p-4 md:p-5 text-xs font-bold uppercase tracking-wider text-slate-500">Traditional Accounting Tools</th>
-                <th className="p-4 md:p-5 text-xs font-bold uppercase tracking-wider text-indigo-650 bg-indigo-50/20">AIBASS</th>
+                  <th className="p-4 md:p-5 text-sm font-bold uppercase tracking-wider text-slate-800">Capability</th>
+                  <th className="p-4 md:p-5 text-sm font-bold uppercase tracking-wider text-slate-500">Traditional Accounting Tools</th>
+                  <th className="p-4 md:p-5 text-sm font-bold uppercase tracking-wider text-indigo-650 bg-indigo-50/20">AIBASS</th>
               </tr>
             </thead>
             <tbody>
@@ -66,9 +66,9 @@ export const AiAccountingComparison = () => {
                    key={idx} 
                   className={`border-b border-slate-100/80 hover:bg-slate-50/30 transition-colors last:border-0`}
                 >
-                  <td className="p-4 md:p-5 text-xs font-bold text-slate-800">{row.capability}</td>
-                  <td className="p-4 md:p-5 text-xs font-semibold text-slate-555">{row.traditional}</td>
-                  <td className="p-4 md:p-5 text-xs font-bold text-indigo-900 bg-indigo-50/10">{row.aibass}</td>
+                  <td className="p-4 md:p-5 text-sm font-bold text-slate-800">{row.capability}</td>
+                  <td className="p-4 md:p-5 text-sm font-semibold text-slate-555">{row.traditional}</td>
+                  <td className="p-4 md:p-5 text-sm font-bold text-indigo-900 bg-indigo-50/10">{row.aibass}</td>
                 </tr>
               ))}
             </tbody>
@@ -79,17 +79,17 @@ export const AiAccountingComparison = () => {
         <div className="block md:hidden space-y-4 max-w-md mx-auto">
           {rows.map((row, idx) => (
             <div key={idx} className="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-sm text-left space-y-3">
-              <h3 className="text-xs font-bold text-slate-900 border-b border-slate-100 pb-2 tracking-tight">
+              <h3 className="text-sm font-bold text-slate-900 border-b border-slate-100 pb-2 tracking-tight">
                 {row.capability}
               </h3>
               <div className="grid grid-cols-1 gap-2.5">
                 <div className="space-y-1">
-                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest block">Traditional Tools</span>
-                  <p className="text-xs font-semibold text-slate-600">{row.traditional}</p>
+                  <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block">Traditional Tools</span>
+                  <p className="text-sm font-semibold text-slate-600">{row.traditional}</p>
                 </div>
                 <div className="space-y-1 bg-indigo-50/40 border border-indigo-100/50 p-2.5 rounded-xl">
-                  <span className="text-[9px] font-extrabold text-indigo-650 uppercase tracking-widest block">AIBASS</span>
-                  <p className="text-xs font-bold text-slate-900">{row.aibass}</p>
+                  <span className="text-xs font-extrabold text-indigo-650 uppercase tracking-widest block">AIBASS</span>
+                  <p className="text-sm font-bold text-slate-900">{row.aibass}</p>
                 </div>
               </div>
             </div>
@@ -102,7 +102,7 @@ export const AiAccountingComparison = () => {
             <Info className="h-5 w-5" />
           </div>
           <div>
-            <p className="text-xs text-blue-800 font-semibold leading-relaxed">
+            <p className="text-sm text-blue-800 font-semibold leading-relaxed">
               AIBASS does not remove the need to review important accounting information. It makes the process of accessing supported tasks and business information simpler.
             </p>
           </div>

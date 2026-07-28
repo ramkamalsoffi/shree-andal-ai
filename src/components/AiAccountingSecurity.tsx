@@ -116,8 +116,8 @@ export const AiAccountingSecurity = () => {
                   <Icon className="h-4.5 w-4.5" />
                 </div>
                 <div className="space-y-1">
-                  <h3 className="text-sm font-bold text-slate-900 leading-snug">{item.title}</h3>
-                  <p className="text-xs text-slate-500 font-medium leading-relaxed">{item.desc}</p>
+                  <h3 className="text-base font-bold text-slate-900 leading-snug">{item.title}</h3>
+                  <p className="text-sm text-slate-600 font-medium leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             );
@@ -127,8 +127,8 @@ export const AiAccountingSecurity = () => {
         {/* Bottom Callout banner */}
         <div className="max-w-4xl mx-auto bg-slate-50 border border-slate-200/60 rounded-[32px] p-8 text-center space-y-6">
           <div className="space-y-2">
-            <h3 className="text-lg font-bold text-slate-900">Your Data. Your Access. Your Control.</h3>
-            <p className="text-xs font-semibold text-slate-500 max-w-xl mx-auto leading-relaxed">
+            <h3 className="text-xl font-bold text-slate-900">Your Data. Your Access. Your Control.</h3>
+            <p className="text-sm font-semibold text-slate-600 max-w-xl mx-auto leading-relaxed">
               AIBASS helps businesses manage important financial information while keeping account access and business decisions under user control.
             </p>
           </div>

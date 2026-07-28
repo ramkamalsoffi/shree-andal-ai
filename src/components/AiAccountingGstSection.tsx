@@ -194,36 +194,7 @@ export const AiAccountingGstSection = () => {
 
         </div>
 
-        {/* Section: How AIBASS Connects Your Business */}
-        <div className="bg-white border border-slate-200/60 rounded-[32px] p-6 md:p-8 text-center space-y-8 shadow-sm max-w-5xl mx-auto">
-          <h3 className="text-base font-bold text-slate-900">How AIBASS Connects Your Business</h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-7 gap-4 items-center">
-            {[
-              { title: "Sales Invoice", desc: "Create and save GST sales invoice.", icon: FileText, color: "text-emerald-500 bg-emerald-50 border-emerald-100" },
-              { arrow: true },
-              { title: "GST Calculation", desc: "Applicable GST calculated automatically.", icon: Calculator, color: "text-blue-500 bg-blue-50 border-blue-100" },
-              { arrow: true },
-              { title: "Accounting Record", desc: "Invoice is recorded in accounting instantly.", icon: History, color: "text-indigo-500 bg-indigo-50 border-indigo-100" },
-              { arrow: true },
-              { title: "Inventory Update", desc: "Stock is updated based on the sales invoice.", icon: Package, color: "text-purple-500 bg-purple-50 border-purple-100" }
-            ].map((step, idx) => (
-              step.arrow ? (
-                <div key={idx} className="hidden md:flex justify-center text-slate-350">
-                  <ChevronRight className="h-5 w-5" />
-                </div>
-              ) : (
-                <div key={idx} className="flex flex-col items-center text-center space-y-2 col-span-1">
-                  <div className={`w-11 h-11 rounded-xl flex items-center justify-center border ${step.color} shadow-sm`}>
-                    <step.icon className="h-5 w-5" />
-                  </div>
-                  <h4 className="text-xs font-bold text-slate-800">{step.title}</h4>
-                  <p className="text-[10px] text-slate-500 font-medium leading-relaxed max-w-[120px]">{step.desc}</p>
-                </div>
-              )
-            ))}
-          </div>
-        </div>
+
 
         {/* Section: Supported GST Capabilities */}
         <div className="space-y-8 text-center">
@@ -231,12 +202,13 @@ export const AiAccountingGstSection = () => {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              { title: "Automatic Invoices", desc: "Create GST sales invoices faster.", icon: FileText, color: "text-emerald-600 bg-emerald-50 border-emerald-100" },
-              { title: "Intrastate GST", desc: "Automatically calculate CGST and SGST.", icon: Percent, color: "text-blue-600 bg-blue-50 border-blue-100" },
-              { title: "Interstate GST", desc: "Automatically calculate applicable IGST.", icon: Percent, color: "text-indigo-650 bg-indigo-50 border-indigo-100" },
-              { title: "Connected Records", desc: "Keep sales and accounting information aligned.", icon: Link, color: "text-purple-650 bg-purple-50 border-purple-100" },
-              { title: "Stock Updates", desc: "Inventory is updated automatically on sales.", icon: Package, color: "text-orange-655 bg-orange-50 border-orange-100" },
-              { title: "GST Breakdown", desc: "Display tax values clearly on your invoices.", icon: FileText, color: "text-teal-600 bg-teal-50 border-teal-100" }
+              { title: "Automatic Sales Invoice Creation", desc: "Create GST sales invoices faster.", icon: FileText, color: "text-emerald-600 bg-emerald-50 border-emerald-100" },
+              { title: "Intrastate GST Calculation", desc: "Automatically calculate CGST and SGST.", icon: Percent, color: "text-blue-600 bg-blue-50 border-blue-100" },
+              { title: "Interstate GST Calculation", desc: "Automatically calculate applicable IGST.", icon: Percent, color: "text-indigo-650 bg-indigo-50 border-indigo-100" },
+              { title: "CGST and SGST Calculation", desc: "CGST and SGST calculated for intrastate sales.", icon: Percent, color: "text-purple-650 bg-purple-50 border-purple-100" },
+              { title: "IGST Calculation", desc: "IGST calculated for interstate sales.", icon: Percent, color: "text-orange-655 bg-orange-50 border-orange-100" },
+              { title: "Connected Sales and Accounting Records", desc: "Keep sales and accounting information aligned.", icon: Link, color: "text-teal-600 bg-teal-50 border-teal-100" },
+              { title: "Sales Based Inventory Updates", desc: "Inventory is updated automatically on sales.", icon: Package, color: "text-rose-600 bg-rose-50 border-rose-100" }
             ].map((cap, idx) => {
               const Icon = cap.icon;
               return (
@@ -245,8 +217,8 @@ export const AiAccountingGstSection = () => {
                     <Icon className="h-4.5 w-4.5" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-slate-800">{cap.title}</h4>
-                    <p className="text-[11px] text-slate-500 font-medium mt-0.5 leading-snug">{cap.desc}</p>
+                    <h4 className="text-sm font-bold text-slate-800">{cap.title}</h4>
+                    <p className="text-xs text-slate-500 font-medium mt-0.5 leading-snug">{cap.desc}</p>
                   </div>
                 </div>
               );
@@ -261,8 +233,8 @@ export const AiAccountingGstSection = () => {
           </div>
           <div>
             <h4 className="text-xs font-extrabold text-amber-900 uppercase tracking-wide">GST Feature Scope</h4>
-            <p className="text-xs text-amber-800 font-semibold mt-1 leading-relaxed">
-              AIBASS supports GST calculation during sales invoice creation. GST return filing, GSTR reconciliation, TDS management and other statutory activities are not currently included in this software.
+            <p className="text-sm text-amber-800 font-semibold mt-1 leading-relaxed">
+              AIBASS supports GST calculation during invoice creation. GST return filing, GSTR reconciliation, TDS management and other statutory activities should be handled separately unless those features are officially available.
             </p>
           </div>
         </div>

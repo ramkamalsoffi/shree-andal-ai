@@ -65,10 +65,10 @@ export const AiAccountingWorkflow = () => {
                     </div>
                     {/* Text */}
                     <div className="text-left space-y-1">
-                      <h4 className="text-sm font-extrabold text-slate-800 tracking-tight">
+                      <h4 className="text-base font-extrabold text-slate-800 tracking-tight">
                         {step.title}
                       </h4>
-                      <p className="text-xs text-slate-550 leading-normal max-w-xs">
+                      <p className="text-sm text-slate-600 leading-normal max-w-xs">
                         {step.desc}
                       </p>
                     </div>

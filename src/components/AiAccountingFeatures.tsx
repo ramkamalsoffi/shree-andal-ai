@@ -97,10 +97,10 @@ export const AiAccountingFeatures = () => {
                 
                 {/* Text content */}
                 <div className="space-y-2">
-                  <h3 className="text-sm font-extrabold text-slate-800 tracking-tight">
+                  <h3 className="text-base font-extrabold text-slate-800 tracking-tight">
                     {card.title}
                   </h3>
-                  <p className="text-xs text-slate-500 font-medium leading-relaxed">
+                  <p className="text-sm text-slate-600 font-medium leading-relaxed">
                     {card.desc}
                   </p>
                 </div>

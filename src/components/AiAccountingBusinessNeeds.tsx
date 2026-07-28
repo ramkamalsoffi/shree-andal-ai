@@ -104,7 +104,7 @@ export const AiAccountingBusinessNeeds = () => {
                 <div className="pt-2">
                   <span 
                     onClick={() => navigate(item.route)}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-650 hover:text-indigo-850 cursor-pointer group uppercase tracking-wider"
+                    className="inline-flex items-center gap-1.5 text-sm font-bold text-indigo-650 hover:text-indigo-850 cursor-pointer group uppercase tracking-wider"
                   >
                     {item.linkText}
                     <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />

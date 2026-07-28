@@ -87,14 +87,14 @@ export const AiAccountingChallenges = () => {
                   <h3 className="text-base font-bold text-slate-900">{item.title}</h3>
                 </div>
                 
-                <div className="space-y-2.5 text-xs">
+                <div className="space-y-2.5 text-sm">
                   <div>
-                    <span className="font-extrabold text-rose-500 block uppercase tracking-wider text-[10px]">The Problem</span>
-                    <p className="text-slate-600 font-medium leading-relaxed mt-0.5">{item.problem}</p>
+                    <span className="font-extrabold text-rose-500 block uppercase tracking-wider text-xs">The Problem</span>
+                    <p className="text-slate-655 font-medium leading-relaxed mt-0.5">{item.problem}</p>
                   </div>
                   <div className="pt-1.5 border-t border-slate-50">
-                    <span className="font-extrabold text-emerald-600 block uppercase tracking-wider text-[10px]">The AIBASS Solution</span>
-                    <p className="text-slate-750 font-semibold leading-relaxed mt-0.5">{item.solution}</p>
+                    <span className="font-extrabold text-emerald-650 block uppercase tracking-wider text-xs">The AIBASS Solution</span>
+                    <p className="text-slate-800 font-semibold leading-relaxed mt-0.5">{item.solution}</p>
                   </div>
                 </div>
               </div>

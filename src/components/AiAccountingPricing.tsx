@@ -101,16 +101,12 @@ export const AiAccountingPricing = () => {
         
         {/* Header */}
         <div className="space-y-4 text-center max-w-3xl mx-auto">
-          <span className="text-xs font-bold tracking-[0.2em] text-indigo-650 uppercase block">Pricing Plans</span>
           <h2 className="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-            Choose a plan that feels as{" "}
+            Simple and{" "}
             <span className="bg-gradient-to-r from-sky-600 to-indigo-600 bg-clip-text text-transparent">
-              clear as the interface.
+              Affordable Pricing
             </span>
           </h2>
-          <p className="text-sm font-medium leading-relaxed text-slate-500 sm:text-base">
-            Each plan is shown as its own card so pricing stays readable, distinct, and easy to compare.
-          </p>
           <div className="w-12 h-1 bg-indigo-600 rounded-full mx-auto" />
         </div>
 

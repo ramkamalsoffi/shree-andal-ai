@@ -88,8 +88,8 @@ export const AiAccountingBenefits = () => {
                   <Icon className="h-5 w-5" />
                 </div>
                 <div className="space-y-1">
-                  <h3 className="text-sm font-bold text-slate-900 leading-snug">{item.title}</h3>
-                  <p className="text-xs text-slate-500 font-medium leading-relaxed">{item.desc}</p>
+                  <h3 className="text-base font-bold text-slate-900 leading-snug">{item.title}</h3>
+                  <p className="text-sm text-slate-600 font-medium leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             );

@@ -107,7 +107,7 @@ export const AiAccountingFeaturesList = () => {
                   </p>
                   
                   {item.extra && (
-                    <p className="text-xs text-slate-500 leading-relaxed italic border-l-2 border-indigo-200 pl-3">
+                    <p className="text-sm text-slate-500 leading-relaxed italic border-l-2 border-indigo-200 pl-3">
                       {item.extra}
                     </p>
                   )}
@@ -116,7 +116,7 @@ export const AiAccountingFeaturesList = () => {
                 <div className="pt-2">
                   <span 
                     onClick={() => navigate(item.route)}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-600 hover:text-indigo-850 cursor-pointer group uppercase tracking-wider"
+                    className="inline-flex items-center gap-1.5 text-sm font-bold text-indigo-600 hover:text-indigo-850 cursor-pointer group uppercase tracking-wider"
                   >
                     {item.linkText}
                     <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />

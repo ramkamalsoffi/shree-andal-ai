@@ -53,7 +53,7 @@ export const AiAccountingCommands = () => {
                   <div key={index} className="space-y-2">
                     {/* User command bubble */}
                     <div className="flex justify-end">
-                      <div className="bg-indigo-600 text-white rounded-2xl rounded-tr-none px-4 py-2.5 shadow-sm text-xs font-semibold max-w-[85%]">
+                      <div className="bg-indigo-600 text-white rounded-2xl rounded-tr-none px-4 py-2.5 shadow-sm text-sm font-semibold max-w-[85%]">
                         <p>{item.cmd}</p>
                         <div className="flex justify-end gap-1 mt-1 opacity-80 text-[9px] font-normal">
                           <span>11:32 AM</span>
@@ -63,7 +63,7 @@ export const AiAccountingCommands = () => {
                     </div>
                     {/* System response bubble */}
                     <div className="flex justify-start">
-                      <div className="bg-white border border-slate-100 rounded-2xl rounded-tl-none px-4 py-2.5 shadow-sm text-xs font-medium text-slate-700 max-w-[90%] flex gap-2">
+                      <div className="bg-white border border-slate-100 rounded-2xl rounded-tl-none px-4 py-2.5 shadow-sm text-sm font-medium text-slate-700 max-w-[90%] flex gap-2">
                         <Sparkles className="h-3.5 w-3.5 text-indigo-500 shrink-0 mt-0.5" />
                         <p>{item.resp}</p>
                       </div>
@@ -93,14 +93,14 @@ export const AiAccountingCommands = () => {
                   <div key={index} className="space-y-2">
                     {/* User command bubble */}
                     <div className="flex justify-end">
-                      <div className="bg-slate-950 text-white rounded-2xl rounded-tr-none px-4 py-2.5 shadow-sm text-xs font-semibold max-w-[85%] flex items-center gap-2">
+                      <div className="bg-slate-950 text-white rounded-2xl rounded-tr-none px-4 py-2.5 shadow-sm text-sm font-semibold max-w-[85%] flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                         <p className="italic">“{item.cmd}”</p>
                       </div>
                     </div>
                     {/* System response bubble */}
                     <div className="flex justify-start">
-                      <div className="bg-white border border-slate-100 rounded-2xl rounded-tl-none px-4 py-2.5 shadow-sm text-xs font-medium text-slate-700 max-w-[90%] flex gap-2">
+                      <div className="bg-white border border-slate-100 rounded-2xl rounded-tl-none px-4 py-2.5 shadow-sm text-sm font-medium text-slate-700 max-w-[90%] flex gap-2">
                         <Sparkles className="h-3.5 w-3.5 text-emerald-500 shrink-0 mt-0.5" />
                         <p>{item.resp}</p>
                       </div>
@@ -115,7 +115,7 @@ export const AiAccountingCommands = () => {
 
         {/* CTA section bottom */}
         <div className="text-center space-y-4 pt-4">
-          <p className="text-xs font-semibold text-slate-500 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm font-semibold text-slate-600 max-w-2xl mx-auto leading-relaxed">
             This voice enabled accounting software experience helps business owners complete supported activities and access financial information faster.
           </p>
           <Button 

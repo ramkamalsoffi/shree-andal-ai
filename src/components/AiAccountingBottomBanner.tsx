@@ -24,11 +24,11 @@ export const AiAccountingBottomBanner = () => {
             <h2 className="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl md:text-5xl leading-tight">
               Make Business Accounting{" "}
               <span className="bg-gradient-to-r from-sky-600 to-indigo-600 bg-clip-text text-transparent">
-                Easier to Manage
+                Easier with AI
               </span>
             </h2>
 
-            <div className="space-y-4 text-xs md:text-sm font-semibold text-slate-655 leading-relaxed max-w-2xl mx-auto">
+            <div className="space-y-4 text-sm md:text-base font-semibold text-slate-655 leading-relaxed max-w-2xl mx-auto">
               <p>
                 Manage bookkeeping, create sales invoices, calculate GST, monitor inventory, generate financial reports and review cash flow predictions from one connected platform.
               </p>

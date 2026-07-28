@@ -12,7 +12,6 @@ import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import { AiAccountingHero } from "@/components/AiAccountingHero";
 import { AiAccountingFeatures } from "@/components/AiAccountingFeatures";
-import { AiAccountingWorkflow } from "@/components/AiAccountingWorkflow";
 import { AiAccountingChallenges } from "@/components/AiAccountingChallenges";
 import { AiAccountingCommands } from "@/components/AiAccountingCommands";
 import { AiAccountingFeaturesList } from "@/components/AiAccountingFeaturesList";
@@ -128,64 +127,44 @@ const AiAccountingExplained = () => {
 
         {/* Section 3: AI Based Accounting Software Built for Modern Businesses */}
         <section id="about-aibass" className="py-6 md:py-8 border-t border-slate-100 scroll-mt-24">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="max-w-4xl space-y-6">
+            <div className="space-y-3">
+              <h2 className="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+                AI Based Accounting Software Built for Modern Businesses
+              </h2>
+            </div>
             
-            <div className="lg:col-span-7 space-y-6">
-              <div className="space-y-3">
-                <span className="text-xs font-bold tracking-[0.2em] text-indigo-655 uppercase block">Intelligent Workspace</span>
-                <h2 className="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-                  AI Based Accounting Software Built for Modern Businesses
-                </h2>
-              </div>
-              
-              <div className="space-y-4 text-sm font-medium leading-relaxed text-slate-700 sm:text-base">
-                <p>
-                  AIBASS is an AI based accounting software that makes everyday business finance easier to manage. 
-                  It brings accounting, bookkeeping, invoicing, GST, inventory, financial reporting and cash flow 
-                  information into one connected platform.
-                </p>
-                <p>
-                  Instead of moving through several menus to find reports or complete routine activities, 
-                  users can tell AIBASS what they need using a voice or text command. The platform processes 
-                  the instruction and completes the supported action or displays the requested information.
-                </p>
-                <p className="font-semibold text-slate-850">
-                  This simpler approach helps business owners spend less time navigating accounting software 
-                  and more time understanding sales, expenses, stock and financial performance.
-                </p>
-              </div>
-
-              <div className="pt-2">
-                <Button 
-                  onClick={() => {
-                    const element = document.getElementById("ai-features");
-                    if (element) {
-                      element.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
-                  className="bg-indigo-600 hover:bg-indigo-755 text-white font-semibold px-6 py-5 rounded-full flex items-center gap-2 group transition-all shadow-md hover:shadow-indigo-200"
-                >
-                  Explore AIBASS Features
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
-              </div>
+            <div className="space-y-4 text-sm font-medium leading-relaxed text-slate-700 sm:text-base">
+              <p>
+                AIBASS is an AI based accounting software that makes everyday business finance easier to manage. 
+                It brings accounting, bookkeeping, invoicing, GST, inventory, financial reporting and cash flow 
+                information into one connected platform.
+              </p>
+              <p>
+                Instead of moving through several menus to find reports or complete routine activities, 
+                users can tell AIBASS what they need using a voice or text command. The platform processes 
+                the instruction and completes the supported action or displays the requested information.
+              </p>
+              <p className="font-semibold text-slate-850">
+                This simpler approach helps business owners spend less time navigating accounting software 
+                and more time understanding sales, expenses, stock and financial performance.
+              </p>
             </div>
 
-            <div className="lg:col-span-5 flex items-center justify-center">
-              <div className="relative w-full max-w-sm rounded-[32px] border border-slate-200/60 bg-white p-6 shadow-[0_15px_40px_rgba(0,0,0,0.03)] overflow-hidden">
-                <div className="absolute top-0 right-0 -mr-6 -mt-6 w-24 h-24 rounded-full bg-indigo-50/50 -z-10" />
-                <h4 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">AIBASS Ecosystem</h4>
-                <div className="space-y-3">
-                  {["Unified Ledger", "Command Center", "GST Automations", "Inventory Ledger", "Predictive Analytics"].map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-slate-50 border border-slate-100">
-                      <div className="w-1.5 h-1.5 rounded-full bg-indigo-655" />
-                      <span className="text-xs font-semibold text-slate-700">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+            <div className="pt-2">
+              <Button 
+                onClick={() => {
+                  const element = document.getElementById("ai-features");
+                  if (element) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+                className="bg-indigo-600 hover:bg-indigo-755 text-white font-semibold px-6 py-5 rounded-full flex items-center gap-2 group transition-all shadow-md hover:shadow-indigo-200"
+              >
+                Explore AIBASS Features
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
             </div>
-
           </div>
         </section>
 
@@ -223,8 +202,6 @@ const AiAccountingExplained = () => {
             {/* Feature Cards Grid (how it helps) */}
             <AiAccountingFeatures />
 
-            {/* Workflow Pipeline Progress Bar */}
-            <AiAccountingWorkflow />
           </div>
         </section>
 
