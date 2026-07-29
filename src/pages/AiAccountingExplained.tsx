@@ -137,7 +137,7 @@ const AiAccountingExplained = () => {
 
         {/* Section 3: AI Based Accounting Software Built for Modern Businesses */}
         <section id="about-aibass" className="py-6 md:py-8 border-t border-slate-100 scroll-mt-24">
-          <div className="max-w-4xl space-y-6">
+          <div className="max-w-6xl mx-auto text-center flex flex-col items-center justify-center space-y-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
                 AI Based Accounting Software Built for Modern Businesses
@@ -169,7 +169,7 @@ const AiAccountingExplained = () => {
                     element.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
-                className="bg-indigo-600 hover:bg-indigo-755 text-white font-semibold px-6 py-5 rounded-full flex items-center gap-2 group transition-all shadow-md hover:shadow-indigo-200"
+                className="bg-indigo-600 hover:bg-indigo-755 text-white font-semibold px-6 py-5 rounded-full flex items-center gap-2 group transition-all shadow-md hover:shadow-indigo-200 mx-auto"
               >
                 Explore AIBASS Features
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

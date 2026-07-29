@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageSquare, Mic, Play, Keyboard, Sparkles, CheckCheck } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const AiAccountingCommands = () => {
+  const [step, setStep] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setStep((current) => {
+        // total steps for 3 pairs = 6 (0 to 6)
+        // 7 and 8 act as a pause period with all messages visible
+        if (current >= 8) {
+          return 0;
+        }
+        return current + 1;
+      });
+    }, 600);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const textCommands = [
     { cmd: "Create a sales invoice for this customer.", resp: "The platform creates the invoice and calculates the applicable GST." },
     { cmd: "Show my profit and loss for this month.", resp: "The platform displays monthly income, expenses and profit status." },
@@ -18,7 +36,7 @@ export const AiAccountingCommands = () => {
   return (
     <section id="ai-commands" className="py-6 md:py-8 border-t border-slate-100 bg-transparent scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        
+
         {/* Header */}
         <div className="space-y-4 text-center max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
@@ -33,9 +51,9 @@ export const AiAccountingCommands = () => {
 
         {/* Side-by-Side Command Showcase */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          
+
           {/* Column 1: Type Your Command */}
-          <div className="bg-slate-50/50 border border-slate-200/60 rounded-[32px] p-6 md:p-8 flex flex-col justify-between space-y-8">
+          <div className="bg-slate-50/50 border border-slate-200/60 rounded-[32px] p-6 md:p-8 flex flex-col justify-between space-y-8 min-h-[500px]">
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-purple-100 flex items-center justify-center text-purple-650">
@@ -49,33 +67,61 @@ export const AiAccountingCommands = () => {
 
               {/* Chat Simulation */}
               <div className="space-y-3.5 pt-4">
-                {textCommands.map((item, index) => (
-                  <div key={index} className="space-y-2">
-                    {/* User command bubble */}
-                    <div className="flex justify-end">
-                      <div className="bg-indigo-600 text-white rounded-2xl rounded-tr-none px-4 py-2.5 shadow-sm text-sm font-semibold max-w-[85%]">
-                        <p>{item.cmd}</p>
-                        <div className="flex justify-end gap-1 mt-1 opacity-80 text-[9px] font-normal">
-                          <span>11:32 AM</span>
-                          <CheckCheck className="h-3 w-3 inline-block" />
-                        </div>
+                <AnimatePresence mode="popLayout">
+                  {textCommands.map((item, index) => {
+                    const userVisible = step >= (index * 2 + 1);
+                    const systemVisible = step >= (index * 2 + 2);
+
+                    return (
+                      <div key={index} className="space-y-2">
+                        {/* User command bubble */}
+                        <AnimatePresence>
+                          {userVisible && (
+                            <motion.div
+                              initial={{ opacity: 0, y: 12, scale: 0.96 }}
+                              animate={{ opacity: 1, y: 0, scale: 1 }}
+                              exit={{ opacity: 0, scale: 0.95 }}
+                              transition={{ duration: 0.3 }}
+                              className="flex justify-end"
+                            >
+                              <div className="bg-indigo-600 text-white rounded-2xl rounded-tr-none px-4 py-2.5 shadow-sm text-sm font-semibold max-w-[85%]">
+                                <p>{item.cmd}</p>
+                                <div className="flex justify-end gap-1 mt-1 opacity-80 text-[9px] font-normal">
+                                  <span>11:32 AM</span>
+                                  <CheckCheck className="h-3 w-3 inline-block" />
+                                </div>
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+
+                        {/* System response bubble */}
+                        <AnimatePresence>
+                          {systemVisible && (
+                            <motion.div
+                              initial={{ opacity: 0, y: 12, scale: 0.96 }}
+                              animate={{ opacity: 1, y: 0, scale: 1 }}
+                              exit={{ opacity: 0, scale: 0.95 }}
+                              transition={{ duration: 0.3 }}
+                              className="flex justify-start"
+                            >
+                              <div className="bg-white border border-slate-100 rounded-2xl rounded-tl-none px-4 py-2.5 shadow-sm text-sm font-medium text-slate-700 max-w-[90%] flex gap-2">
+                                <Sparkles className="h-3.5 w-3.5 text-indigo-500 shrink-0 mt-0.5" />
+                                <p>{item.resp}</p>
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
                       </div>
-                    </div>
-                    {/* System response bubble */}
-                    <div className="flex justify-start">
-                      <div className="bg-white border border-slate-100 rounded-2xl rounded-tl-none px-4 py-2.5 shadow-sm text-sm font-medium text-slate-700 max-w-[90%] flex gap-2">
-                        <Sparkles className="h-3.5 w-3.5 text-indigo-500 shrink-0 mt-0.5" />
-                        <p>{item.resp}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                    );
+                  })}
+                </AnimatePresence>
               </div>
             </div>
           </div>
 
           {/* Column 2: Speak Your Command */}
-          <div className="bg-slate-50/50 border border-slate-200/60 rounded-[32px] p-6 md:p-8 flex flex-col justify-between space-y-8">
+          <div className="bg-slate-50/50 border border-slate-200/60 rounded-[32px] p-6 md:p-8 flex flex-col justify-between space-y-8 min-h-[500px]">
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-655">
@@ -89,24 +135,52 @@ export const AiAccountingCommands = () => {
 
               {/* Chat Simulation */}
               <div className="space-y-3.5 pt-4">
-                {voiceCommands.map((item, index) => (
-                  <div key={index} className="space-y-2">
-                    {/* User command bubble */}
-                    <div className="flex justify-end">
-                      <div className="bg-slate-950 text-white rounded-2xl rounded-tr-none px-4 py-2.5 shadow-sm text-sm font-semibold max-w-[85%] flex items-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                        <p className="italic">“{item.cmd}”</p>
+                <AnimatePresence mode="popLayout">
+                  {voiceCommands.map((item, index) => {
+                    const userVisible = step >= (index * 2 + 1);
+                    const systemVisible = step >= (index * 2 + 2);
+
+                    return (
+                      <div key={index} className="space-y-2">
+                        {/* User command bubble */}
+                        <AnimatePresence>
+                          {userVisible && (
+                            <motion.div
+                              initial={{ opacity: 0, y: 12, scale: 0.96 }}
+                              animate={{ opacity: 1, y: 0, scale: 1 }}
+                              exit={{ opacity: 0, scale: 0.95 }}
+                              transition={{ duration: 0.3 }}
+                              className="flex justify-end"
+                            >
+                              <div className="bg-slate-950 text-white rounded-2xl rounded-tr-none px-4 py-2.5 shadow-sm text-sm font-semibold max-w-[85%] flex items-center gap-2">
+                                <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                                <p className="italic">“{item.cmd}”</p>
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+
+                        {/* System response bubble */}
+                        <AnimatePresence>
+                          {systemVisible && (
+                            <motion.div
+                              initial={{ opacity: 0, y: 12, scale: 0.96 }}
+                              animate={{ opacity: 1, y: 0, scale: 1 }}
+                              exit={{ opacity: 0, scale: 0.95 }}
+                              transition={{ duration: 0.3 }}
+                              className="flex justify-start"
+                            >
+                              <div className="bg-white border border-slate-100 rounded-2xl rounded-tl-none px-4 py-2.5 shadow-sm text-sm font-medium text-slate-700 max-w-[90%] flex gap-2">
+                                <Sparkles className="h-3.5 w-3.5 text-emerald-500 shrink-0 mt-0.5" />
+                                <p>{item.resp}</p>
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
                       </div>
-                    </div>
-                    {/* System response bubble */}
-                    <div className="flex justify-start">
-                      <div className="bg-white border border-slate-100 rounded-2xl rounded-tl-none px-4 py-2.5 shadow-sm text-sm font-medium text-slate-700 max-w-[90%] flex gap-2">
-                        <Sparkles className="h-3.5 w-3.5 text-emerald-500 shrink-0 mt-0.5" />
-                        <p>{item.resp}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                    );
+                  })}
+                </AnimatePresence>
               </div>
             </div>
           </div>
@@ -118,7 +192,7 @@ export const AiAccountingCommands = () => {
           <p className="text-sm font-semibold text-slate-600 max-w-2xl mx-auto leading-relaxed">
             This voice enabled accounting software experience helps business owners complete supported activities and access financial information faster.
           </p>
-          <Button 
+          <Button
             onClick={() => {
               const element = document.getElementById("gst-calculation-section");
               if (element) {
