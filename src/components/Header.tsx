@@ -21,7 +21,7 @@ export const Header = () => {
   });
 
   const isMainPage = location.pathname === "/";
-  const homeLink = isMainPage ? "/ai-accounting-explained" : "/";
+  const homeLink = isMainPage ? "/ai-accounting-software" : "/";
   const linkPrefix = isMainPage ? "" : "/";
 
   return (
@@ -49,12 +49,7 @@ export const Header = () => {
 
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center gap-6">
-            <a 
-              href={homeLink} 
-              className="text-xs font-bold text-slate-655 hover:text-slate-950 transition-colors uppercase tracking-[0.15em]"
-            >
-              Home
-            </a>
+
             <a 
               href={`${linkPrefix}#features`} 
               className="text-xs font-bold text-slate-655 hover:text-slate-950 transition-colors uppercase tracking-[0.15em]"
@@ -90,7 +85,7 @@ export const Header = () => {
           {/* Action Button & Hamburger */}
           <div className="flex items-center gap-3">
             <Button
-              onClick={() => navigate("/auth?tab=signup")}
+              onClick={() => window.dispatchEvent(new CustomEvent("openTrialModal"))}
               className="hidden lg:flex h-10 items-center rounded-full bg-slate-950 px-5 text-sm font-semibold text-white shadow-md transition-transform hover:-translate-y-0.5 hover:bg-slate-800"
             >
               Get Started
@@ -119,13 +114,7 @@ export const Header = () => {
               className="overflow-hidden lg:hidden"
             >
               <div className="flex flex-col gap-3.5 px-6 pb-6 pt-2 border-t border-slate-150/40">
-                <a
-                  href={homeLink}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-xs font-extrabold text-slate-655 hover:text-slate-950 transition-colors uppercase tracking-[0.15em]"
-                >
-                  Home
-                </a>
+
                 <a
                   href={`${linkPrefix}#features`}
                   onClick={() => setMobileMenuOpen(false)}
@@ -168,7 +157,7 @@ export const Header = () => {
                   <Button
                     onClick={() => {
                       setMobileMenuOpen(false);
-                      navigate("/auth?tab=signup");
+                      window.dispatchEvent(new CustomEvent("openTrialModal"));
                     }}
                     className="w-full h-10 rounded-full bg-slate-950 text-sm font-semibold text-white shadow hover:bg-slate-800"
                   >

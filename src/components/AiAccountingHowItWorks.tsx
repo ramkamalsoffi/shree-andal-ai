@@ -138,7 +138,7 @@ export const AiAccountingHowItWorks = () => {
         {/* CTA */}
         <div className="text-center pt-4">
           <Button
-            onClick={() => navigate("/auth?tab=signup")}
+            onClick={() => window.dispatchEvent(new CustomEvent("openTrialModal"))}
             className="bg-slate-950 hover:bg-slate-800 text-white font-semibold h-12 px-8 rounded-full inline-flex items-center gap-2 group transition-all"
           >
             Book a Product Walkthrough

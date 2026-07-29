@@ -8,8 +8,10 @@ import {
   ChevronRight 
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export const AiAccountingCommands = () => {
+  const navigate = useNavigate();
   const [activeIndex, setActiveIndex] = useState(0);
   const [typedText, setTypedText] = useState("");
   const [typedVoice, setTypedVoice] = useState("");
@@ -318,16 +320,8 @@ export const AiAccountingCommands = () => {
 
         {/* CTA section bottom */}
         <div className="text-center space-y-4 pt-4">
-          <p className="text-sm font-semibold text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            This voice enabled accounting software experience helps business owners complete supported activities and access financial information faster.
-          </p>
           <Button 
-            onClick={() => {
-              const element = document.getElementById("gst-calculation-section");
-              if (element) {
-                element.scrollIntoView({ behavior: "smooth" });
-              }
-            }}
+            onClick={() => window.dispatchEvent(new CustomEvent("openTrialModal"))}
             className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold h-11 px-6 rounded-full inline-flex items-center gap-2 group transition-all shadow-md"
           >
             Watch AIBASS in Action

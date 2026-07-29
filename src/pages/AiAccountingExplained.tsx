@@ -34,6 +34,7 @@ import { AiAccountingBottomBanner } from "@/components/AiAccountingBottomBanner"
 import { AiAccountingFaq } from "@/components/AiAccountingFaq";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { TrialFormModal } from "@/components/TrialFormModal";
 
 const AiAccountingExplained = () => {
   const navigate = useNavigate();
@@ -104,6 +105,7 @@ const AiAccountingExplained = () => {
       />
 
       <Header />
+      <TrialFormModal />
 
       {/* Main Container */}
       <main className="relative z-10 mx-auto max-w-[1380px] w-full px-4 sm:px-8 lg:px-12 pb-16">
@@ -163,12 +165,7 @@ const AiAccountingExplained = () => {
 
             <div className="pt-2">
               <Button 
-                onClick={() => {
-                  const element = document.getElementById("ai-features");
-                  if (element) {
-                    element.scrollIntoView({ behavior: "smooth" });
-                  }
-                }}
+                onClick={() => window.dispatchEvent(new CustomEvent("openTrialModal"))}
                 className="bg-indigo-600 hover:bg-indigo-755 text-white font-semibold px-6 py-5 rounded-full flex items-center gap-2 group transition-all shadow-md hover:shadow-indigo-200 mx-auto"
               >
                 Explore AIBASS Features

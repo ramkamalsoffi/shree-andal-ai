@@ -226,31 +226,19 @@ export const AiAccountingGstSection = () => {
           </div>
         </div>
 
-        {/* Section: GST Warning Banner */}
-        <div className="bg-amber-50/70 border border-amber-100 rounded-2xl p-5 max-w-4xl mx-auto flex items-start gap-4 text-left shadow-sm">
-          <div className="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-200/40 flex items-center justify-center text-amber-600 shrink-0">
-            <Info className="h-5 w-5" />
-          </div>
-          <div>
-            <h4 className="text-xs font-extrabold text-amber-900 uppercase tracking-wide">GST Feature Scope</h4>
-            <p className="text-sm text-amber-800 font-semibold mt-1 leading-relaxed">
-              AIBASS supports GST calculation during invoice creation. GST return filing, GSTR reconciliation, TDS management and other statutory activities should be handled separately unless those features are officially available.
-            </p>
-          </div>
-        </div>
 
         {/* Bottom CTA Actions */}
         <div className="text-center space-y-4 pt-4 border-t border-slate-100">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
-              onClick={() => navigate("/auth?tab=signup")}
+              onClick={() => window.dispatchEvent(new CustomEvent("openTrialModal"))}
               className="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-semibold h-12 px-8 rounded-full text-sm shadow-md transition-all hover:-translate-y-0.5"
             >
               Start 30 Day Free Trial
             </Button>
             <Button
               variant="outline"
-              onClick={() => navigate("/tax-gst")}
+              onClick={() => window.dispatchEvent(new CustomEvent("openTrialModal"))}
               className="w-full sm:w-auto border border-slate-200 hover:bg-slate-50 text-slate-700 font-semibold h-12 px-8 rounded-full text-sm transition-all hover:-translate-y-0.5"
             >
               Explore GST Accounting

@@ -44,7 +44,7 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/ai-accounting-explained" element={<AiAccountingExplained />} />
+            <Route path="/ai-accounting-software" element={<AiAccountingExplained />} />
 
             {/* Maintenance Mode Gates */}
             <Route
