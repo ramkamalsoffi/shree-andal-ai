@@ -20,9 +20,9 @@ export const Header = () => {
     }
   });
 
-  const isMainPage = location.pathname === "/";
-  const homeLink = isMainPage ? "/ai-accounting-software" : "/";
-  const linkPrefix = isMainPage ? "" : "/";
+  const isIndexPage = location.pathname === "/ai-accounting-software";
+  const homeLink = isIndexPage ? "/" : "/ai-accounting-software";
+  const linkPrefix = isIndexPage ? "" : "/ai-accounting-software";
 
   return (
     <motion.header
@@ -49,33 +49,20 @@ export const Header = () => {
 
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center gap-6">
-
             <a 
-              href={`${linkPrefix}#features`} 
+              href={isIndexPage ? "#features" : (location.pathname === "/" ? "#features-section" : "/#features-section")} 
               className="text-xs font-bold text-slate-655 hover:text-slate-950 transition-colors uppercase tracking-[0.15em]"
             >
               Features
             </a>
             <a 
-              href={`${linkPrefix}#how-it-works`} 
+              href={isIndexPage ? "#business" : (location.pathname === "/" ? "#industries-section" : "/#industries-section")} 
               className="text-xs font-bold text-slate-655 hover:text-slate-950 transition-colors uppercase tracking-[0.15em] whitespace-nowrap"
             >
-              How It Works
+              Industries
             </a>
             <a 
-              href={`${linkPrefix}#business`} 
-              className="text-xs font-bold text-slate-655 hover:text-slate-950 transition-colors uppercase tracking-[0.15em] whitespace-nowrap"
-            >
-              Businesses
-            </a>
-            <a 
-              href={`${linkPrefix}#why-choose`} 
-              className="text-xs font-bold text-slate-655 hover:text-slate-950 transition-colors uppercase tracking-[0.15em] whitespace-nowrap"
-            >
-              Why Choose AIBASS
-            </a>
-            <a 
-              href={`${linkPrefix}#pricing`} 
+              href={isIndexPage ? "#pricing" : (location.pathname === "/" ? "#pricing-section" : "/#pricing-section")} 
               className="text-xs font-bold text-slate-655 hover:text-slate-950 transition-colors uppercase tracking-[0.15em]"
             >
               Pricing
@@ -116,35 +103,21 @@ export const Header = () => {
               <div className="flex flex-col gap-3.5 px-6 pb-6 pt-2 border-t border-slate-150/40">
 
                 <a
-                  href={`${linkPrefix}#features`}
+                  href={isIndexPage ? "#features" : (location.pathname === "/" ? "#features-section" : "/#features-section")}
                   onClick={() => setMobileMenuOpen(false)}
                   className="text-xs font-extrabold text-slate-655 hover:text-slate-950 transition-colors uppercase tracking-[0.15em]"
                 >
                   Features
                 </a>
                 <a
-                  href={`${linkPrefix}#how-it-works`}
+                  href={isIndexPage ? "#business" : (location.pathname === "/" ? "#industries-section" : "/#industries-section")}
                   onClick={() => setMobileMenuOpen(false)}
                   className="text-xs font-extrabold text-slate-655 hover:text-slate-950 transition-colors uppercase tracking-[0.15em]"
                 >
-                  How It Works
+                  Industries
                 </a>
                 <a
-                  href={`${linkPrefix}#business`}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-xs font-extrabold text-slate-655 hover:text-slate-950 transition-colors uppercase tracking-[0.15em]"
-                >
-                  Businesses
-                </a>
-                <a
-                  href={`${linkPrefix}#why-choose`}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-xs font-extrabold text-slate-655 hover:text-slate-950 transition-colors uppercase tracking-[0.15em]"
-                >
-                  Why Choose AIBASS
-                </a>
-                <a
-                  href={`${linkPrefix}#pricing`}
+                  href={isIndexPage ? "#pricing" : (location.pathname === "/" ? "#pricing-section" : "/#pricing-section")}
                   onClick={() => setMobileMenuOpen(false)}
                   className="text-xs font-extrabold text-slate-655 hover:text-slate-950 transition-colors uppercase tracking-[0.15em]"
                 >

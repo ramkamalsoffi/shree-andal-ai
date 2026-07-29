@@ -205,14 +205,22 @@ export const AiAccountingGstSection = () => {
               { title: "Automatic Sales Invoice Creation", desc: "Create GST sales invoices faster.", icon: FileText, color: "text-emerald-600 bg-emerald-50 border-emerald-100" },
               { title: "Intrastate GST Calculation", desc: "Automatically calculate CGST and SGST.", icon: Percent, color: "text-blue-600 bg-blue-50 border-blue-100" },
               { title: "Interstate GST Calculation", desc: "Automatically calculate applicable IGST.", icon: Percent, color: "text-indigo-650 bg-indigo-50 border-indigo-100" },
-              { title: "CGST and SGST Calculation", desc: "CGST and SGST calculated for intrastate sales.", icon: Percent, color: "text-purple-650 bg-purple-50 border-purple-100" },
+              { title: "CGST and SGST Calculation", desc: "CGST and SGST calculated for intrastate sales.", icon: Percent, color: "text-purple-655 bg-purple-50 border-purple-100" },
               { title: "IGST Calculation", desc: "IGST calculated for interstate sales.", icon: Percent, color: "text-orange-655 bg-orange-50 border-orange-100" },
               { title: "Connected Sales and Accounting Records", desc: "Keep sales and accounting information aligned.", icon: Link, color: "text-teal-600 bg-teal-50 border-teal-100" },
               { title: "Sales Based Inventory Updates", desc: "Inventory is updated automatically on sales.", icon: Package, color: "text-rose-600 bg-rose-50 border-rose-100" }
             ].map((cap, idx) => {
               const Icon = cap.icon;
+              const isLast = idx === 6;
               return (
-                <div key={idx} className="bg-white border border-slate-150 rounded-2xl p-5 flex items-center gap-4 text-left shadow-sm">
+                <div 
+                  key={idx} 
+                  className={`bg-white border border-slate-150 rounded-2xl p-5 flex shadow-sm transition-all flex-row items-center gap-4 text-left ${
+                    isLast 
+                      ? "lg:col-start-2 lg:col-span-1 sm:col-span-2 max-w-md mx-auto w-full" 
+                      : ""
+                  }`}
+                >
                   <div className={`w-10 h-10 rounded-xl flex items-center justify-center border ${cap.color} flex-shrink-0`}>
                     <Icon className="h-4.5 w-4.5" />
                   </div>
